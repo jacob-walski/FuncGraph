@@ -39,14 +39,9 @@ namespace FuncGraph
             {
                 x = (functionInterval * i) + minX;
                 y = equation.Compute(x);
-                if (y < minY)
-                {
-                    minY = y;
-                }
-                else if (y > maxY)
-                {
-                    maxY = y;
-                }
+                
+                minY = Math.Min(y, minY);
+                maxY = Math.Max(y, maxY);
             }
 
             Line line;
